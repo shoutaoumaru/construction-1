@@ -1,6 +1,7 @@
 class MobileMenu {
   constructor() {
     this.DOM = {};
+    this.DOM.body = document.querySelector('body');
     this.DOM.btn = document.querySelector('.l-menu-sp-button');
     this.DOM.container = document.querySelector('.l-menu-sp-button');
     this.DOM.container2 = document.querySelector('.l-menu-sp');
@@ -12,6 +13,7 @@ class MobileMenu {
     return window.ontouchstart ? 'touchstart' : 'click';
   }
   _toggle() {
+    this.DOM.body.classList.toggle('hidden');
     this.DOM.container.classList.toggle('-opened');
     this.DOM.container2.classList.toggle('-opened');
   }

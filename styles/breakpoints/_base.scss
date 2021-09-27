@@ -3,6 +3,10 @@ body {
   font-family: 'Noto Serif JP', serif;
   font-size: 0.95em;
   color: rgb(75, 71, 71);
+
+  &.hidden {
+    overflow: hidden;
+  }
 }
 
 .superwrapper {

@@ -6,6 +6,10 @@ body {
   color: #4b4747;
 }
 
+body.hidden {
+  overflow: hidden;
+}
+
 .superwrapper {
   overflow: hidden;
 }
