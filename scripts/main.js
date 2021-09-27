@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
   );
   // <!-------- /imgSlide-animation -------->
 });
-
-window.addEventListener("scroll", function(){
+//ヘッダーカラーチェンジjs
+window.addEventListener("scroll", function () {
   var header = document.querySelector(".p-header");
   header.classList.toggle("scroll-nav", window.scrollY > 700);
 });

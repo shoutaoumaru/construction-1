@@ -31,6 +31,13 @@
 
 //.p-header
 .p-header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8000;
+
   .l-menu-sp-button {
     display: none;
   }
@@ -43,6 +50,7 @@
 
   & .pc-menu {
     position: fixed;
+    height: 80px;
     top: 35px;
     right: 0;
     z-index: 3000;
@@ -51,8 +59,17 @@
       &__item {
         font-size: 18px;
         padding-right: 40px;
+
+        & a {
+          color: $cWhite;
+        }
       }
     }
+  }
+
+  &.scroll-nav {
+    background: rgba(14, 13, 13, 0.6);
+    transition: 1.0s;
   }
 }
 
@@ -85,6 +102,17 @@
   }
 }
 
+//.p-feature 
+.p-feature {
+  & div> {
+    & div> {
+      &>div {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
 //.p-news 
 .p-news {
   & h2 {
@@ -104,27 +132,6 @@
       & a {
         padding: 3vw 5vw;
       }
-    }
-  }
-}
-
-//.p-open-time
-.p-open-time {
-  &__title {
-    font-size: 28px;
-  }
-
-  &__date {
-    font-size: 20px;
-  }
-
-  & th,
-  & td {
-    font-size: 20px;
-
-    & .open {
-      height: 24px;
-      width: 24px;
     }
   }
 }
@@ -149,6 +156,11 @@
       margin: 0;
     }
   }
+}
+
+//.btn-category
+.btn-category {
+  margin-bottom: 50px;
 }
 
 //.p-footer
@@ -220,41 +232,6 @@
           height: 260px;
         }
       }
-
-    }
-  }
-}
-
-// * * * * * * * * * faq-page * * * * * * 
-.faq-wrapper {
-  .faq-contents {
-    .faq {
-      &__title {
-        margin-bottom: 5vw;
-      }
-
-      &__block {
-
-        & dt,
-        & dd {
-          & .c-txt-md {
-            font-size: 24px;
-          }
-        }
-      }
-
-      & .c-title {
-        font-size: 26px;
-      }
-
-      & .c-txtarea01 {
-        margin-bottom: 15vw;
-
-        & .c-txt-sm {
-          font-size: 20px;
-        }
-      }
-
 
     }
   }
