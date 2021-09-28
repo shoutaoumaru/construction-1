@@ -1,3 +1,7 @@
+<?php
+ /* Template Name: company
+ */
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -5,55 +9,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>会社情報 | 建設テンプレート1</title>
-  <link rel="stylesheet" href="../styles/vendor/bootstrap-reboot.css">
-  <link rel="stylesheet" href="../styles/vendor/animsition.min.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/vendor/bootstrap-reboot.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/vendor/animsition.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/style.css" />
 </head>
 
 <body>
   <div class="staff-wrapper animsition">
     <header id="header" class="p-header">
       <div class="logo clip-js3 top">
-        <a class="animsition-link" href="/">
-          <img src="/images/logo.png" alt="">
+        <a class="animsition-link" href=" <?php echo esc_url( home_url('/')); ?>">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
         </a>
       </div>
       <!-- /.logo -->
       <div class="l-menu-sp-button clip-js3 top"><i></i><i></i><i></i></div>
       <!-- /.l-menu-sp-button -->
-      <div class="pc-menu">
-        <nav class="pc-nav">
-          <ul class="pc-nav__list">
-            <li class="pc-nav__item">
-              <a class="animsition-link" href="/">ホーム</a>
-            </li>
-            <li class="pc-nav__item">
-              <a class="animsition-link" href="/business/business.html">事業内容</a>
-            </li>
-            <li class="pc-nav__item">
-              <a class="animsition-link" href="/company/company.html">会社情報</a>
-            </li>
-            <li class="pc-nav__item">
-              <a class="animsition-link" href="/news/news.html">ニュース</a>
-            </li>
-            <li class="pc-nav__item">
-              <a class="animsition-link" href="/recruit/recruit.html">採用情報</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="l-action-sp">
-        <ul class="l-action-sp__buttons">
-          <li class="l-action-sp__button-access">
-            <a href="https://goo.gl/maps/zHQuAuFJBFJgpG6fA"><i>事業内容</i></a>
-          </li>
-          <li class="l-action-sp__button-tel">
-            <a href="tel:092-686-7954"><i>お問い合わせ</i></a>
-          </li>
-        </ul>
-      </div>
+      <?php get_template_part('includes/c-header'); ?>      
       <!-- /.l-action-sp__buttons -->
     </header>
     <!-- /.p-header -->
@@ -61,7 +35,7 @@
       <div id="c-topview" class="c-topview">
         <div class="c-topview__inner">
           <div class="c-topview__img">
-            <img class="view-sp" src="/images/company/company.jpg" alt="">
+            <img class="view-sp" src="<?php echo get_template_directory_uri(); ?>/images/company/company.jpg" alt="">
           </div>
         </div>
       </div>
@@ -77,7 +51,7 @@
               </div>
               <div class="st-staff__block item">
                 <figure class="doctor__photo staff__photo">
-                  <img src="/images/company/president.jpg">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/company/president.jpg">
                 </figure>
                 <div class="st-staff__profile">
                   <div class="st-staff__name">
@@ -143,10 +117,10 @@
 
           <nav class="btn-category appear up">
             <ul class="item">
-              <li><a href="/business/business.html"><span class="btn-category__first"></span><i>事業内容</i></a></li>
-              <li><a href="/company/company.html"><span class="btn-category__care"></span><i>会社情報</i></a></li>
-              <li><a href="/recruit/recruit.html"><span class="btn-category__staff"></span><i>採用情報</i></a></li>
-              <li class="u-hidden-pc"><a href="/news/news.html"><span class="btn-category__faq"></span><i>ニュース</i></a>
+              <li><a href=" <?php echo esc_url( home_url('/business')); ?>"><span class="btn-category__first"></span><i>事業内容</i></a></li>
+              <li><a href="/ <?php echo esc_url( home_url('/company')); ?>"><span class="btn-category__care"></span><i>会社情報</i></a></li>
+              <li><a href=" <?php echo esc_url( home_url('/recruit')); ?>"><span class="btn-category__staff"></span><i>採用情報</i></a></li>
+              <li class="u-hidden-pc"><a href=" <?php echo esc_url( home_url('/news')); ?>"><span class="btn-category__faq"></span><i>ニュース</i></a>
               </li>
             </ul>
           </nav>
@@ -166,17 +140,17 @@
       <div class="p-footer__wrap">
         <div class="p-footer__label">
           <h2 class="p-footer__logo">
-            <img src="/images/logo.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
           </h2>  
         </div>
         <div class="p-open-time">
           <nav class="p-footer__nav">
             <ul>
-              <li><a href="/" class="animsition-link m-button-arrow-l">ホーム</a></li>
-              <li><a href="/business/business.html" class="animsition-link m-button-arrow-l">事業内容</a></li>
-              <li><a href="/company/company.html" class="animsition-link m-button-arrow-l">会社情報</a></li>
-              <li><a href="/news/news.html" class="animsition-link m-button-arrow-l">ニュース</a></li>
-              <li><a href="/recruit/recruit.html" class="animsition-link m-button-arrow-l">採用情報</a></li>
+              <li><a href=" <?php echo esc_url( home_url('/')); ?>" class="animsition-link m-button-arrow-l">ホーム</a></li>
+              <li><a href=" <?php echo esc_url( home_url('/business')); ?>" class="animsition-link m-button-arrow-l">事業内容</a></li>
+              <li><a href="/ <?php echo esc_url( home_url('/company')); ?>" class="animsition-link m-button-arrow-l">会社情報</a></li>
+              <li><a href=" <?php echo esc_url( home_url('/news')); ?>" class="animsition-link m-button-arrow-l">ニュース</a></li>
+              <li><a href=" <?php echo esc_url( home_url('/recruit')); ?>" class="animsition-link m-button-arrow-l">採用情報</a></li>
             </ul>
           </nav>    
         </div>
@@ -207,10 +181,10 @@
         <nav class="l-menu-sp__nav">
           <ul>
             <li><a class="animsition-link" href="/">ホーム</a></li>
-            <li><a class="animsition-link" href="/business/business.html">事業内容</a></li>
-            <li><a class="animsition-link" href="/company/company.html">会社情報</a></li>
-            <li><a class="animsition-link" href="/news/news.html">ニュース</a></li>
-            <li><a class="animsition-link" href="/recruit/recruit.html">採用情報</a></li>
+            <li><a class="animsition-link" href=" <?php echo esc_url( home_url('/business')); ?>">事業内容</a></li>
+            <li><a class="animsition-link" href="/ <?php echo esc_url( home_url('/company')); ?>">会社情報</a></li>
+            <li><a class="animsition-link" href=" <?php echo esc_url( home_url('/news')); ?>">ニュース</a></li>
+            <li><a class="animsition-link" href=" <?php echo esc_url( home_url('/recruit')); ?>">採用情報</a></li>
           </ul>
           <div class="reserve-btn-wrap">
             <div class="reserve-btn-tel">
@@ -227,14 +201,13 @@
   </div>
   <!-- /.staff-wrapper -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="../scripts/vendor/animsition.min.js"></script>
-  <script src="../scripts/libs/scroll-btn.js"></script>
-  <script src="/scripts/libs/page.js"></script>
-  <script src="../scripts/libs/scroll.js"></script>
-  <script src="../scripts/libs/text-animation.js"></script>
-  <script src="../scripts/libs/mobile-menu.js"></script>
-  <script src="../scripts/libs/date.js"></script>
-  <script src="../scripts/c-main.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/scripts/vendor/animsition.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/scripts/libs/scroll-btn.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/scripts/libs/page.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/scripts/libs/scroll.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/scripts/libs/text-animation.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/scripts/libs/mobile-menu.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/scripts/c-main.js"></script>
 </body>
 
 </html>
