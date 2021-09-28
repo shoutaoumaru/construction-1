@@ -2,16 +2,7 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>建設テンプレート-１</title>
-  <link rel="stylesheet" href="/styles/vendor/logo-animation.min.css">
-  <link rel="stylesheet" href="/styles/vendor/bootstrap-reboot.css">
-  <link rel="stylesheet" href="/styles/vendor/swiper.min.css">
-  <link rel="stylesheet" href="/styles/vendor/animsition.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles/style.css" />
+<?php get_header(); ?>
 </head>
 
 <body>
@@ -90,7 +81,7 @@
     <header id="header" class="p-header">
       <div class="logo clip-js3 top">
         <a class="animsition-link" href="/">
-          <img src="/images/logo.png" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
         </a>
       </div>
       <!-- /.logo -->
@@ -136,16 +127,16 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img class="view-sp" src="/images/top/top-image-sp-1.jpg">
-              <img class="view-pc" src="/images/top/top-image-1.jpg">
+              <img class="view-sp" src="<?php echo get_template_directory_uri(); ?>/images/top/top-image-sp-1.jpg">
+              <img class="view-pc" src="<?php echo get_template_directory_uri(); ?>/images/top/top-image-1.jpg">
             </div>
             <div class="swiper-slide">
-              <img class="view-sp" src="/images/top/top-image-sp-2.jpg">
-              <img class="view-pc" src="/images/top/top-image-2.jpg">
+              <img class="view-sp" src="<?php echo get_template_directory_uri(); ?>/images/top/top-image-sp-2.jpg">
+              <img class="view-pc" src="<?php echo get_template_directory_uri(); ?>/images/top/top-image-2.jpg">
             </div>
             <div class="swiper-slide">
-              <img class="view-sp" src="/images/top/top-image-sp-3.jpg">
-              <img class="view-pc" src="/images/top/top-image-3.jpg">
+              <img class="view-sp" src="<?php echo get_template_directory_uri(); ?>/images/top/top-image-sp-3.jpg">
+              <img class="view-pc" src="<?php echo get_template_directory_uri(); ?>/images/top/top-image-3.jpg">
             </div>
           </div>
         </div>
@@ -171,7 +162,7 @@
             <li>
               <a class="animsition-link" href="/business/business.html">
                 <div class="p-index__photo">
-                  <img class="parallax" src="/images/top/top-business.jpg" />
+                  <img class="parallax" src="<?php echo get_template_directory_uri(); ?>/images/top/top-business.jpg" />
                 </div>
                 <div class="p-index__desc appear up">
                   <h3 class="p-index__title item">事業内容</h3>
@@ -186,7 +177,7 @@
             <li>
               <a class="animsition-link" href="/company/company.html">
                 <div class="p-index__photo">
-                  <img class="parallax" src="/images/top/top-company.jpg" />
+                  <img class="parallax" src="<?php echo get_template_directory_uri(); ?>/images/top/top-company.jpg" />
                 </div>
                 <div class="p-index__desc appear up">
                   <h3 class="p-index__title item">会社情報</h3>
@@ -201,7 +192,7 @@
             <li>
               <a class="animsition-link" href="/recruit/recruit.html">
                 <div class="p-index__photo">
-                  <img class="parallax" src="/images/top/top-recruit.jpg" />
+                  <img class="parallax" src="<?php echo get_template_directory_uri(); ?>/images/top/top-recruit.jpg" />
                 </div>
                 <div class="p-index__desc appear up">
                   <h3 class="p-index__title item">採用情報</h3>
@@ -253,24 +244,16 @@
         <div class="c-container appear up">
           <h2 class="p-news__title clip-js left">お知らせ</h2>
           <ul class="p-news__list item">
-            <li class="p-news__item">
-              <a class="animtision-link" href="/news/news-single.html">
-                <span class="p-news__date">2021.01.25</span>
-                <span class="p-news__item__title">2月のお知らせ</span>
-              </a>
-            </li>
-            <li class="p-news__item">
-              <a class="animtision-link" href="/news/news-single.html">
-                <span class="p-news__date">2021.01.25</span>
-                <span class="p-news__item__title">2月のお知らせ</span>
-              </a>
-            </li>
-            <li class="p-news__item">
-              <a class="animtision-link" href="/news/news-single.html">
-                <span class="p-news__date">2021.01.25</span>
-                <span class="p-news__item__title">2月のお知らせ</span>
-              </a>
-            </li>
+            <?php query_posts('posts_per_page=3'); ?>
+            <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+              <li class="p-news__item">
+                <a class="animtision-link" href="<?php the_permalink() ;?>">
+                  <span class="p-news__date"><?php echo get_the_date(); ?></span>
+                  <span class="p-news__item__title"><?php the_title(); ?></span>
+                </a>
+              </li>
+            <?php endwhile; ?>
+            <?php endif; ?>
           </ul>
           <div class="m-button-normal item">
             <a href="/news/"><i>すべてのお知らせをみる</i></a>
@@ -293,7 +276,7 @@
       <div class="p-footer__wrap">
         <div class="p-footer__label">
           <h2 class="p-footer__logo">
-            <img src="/images/logo.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
           </h2>
         </div>
         <nav class="p-footer__nav">
@@ -350,19 +333,7 @@
     <!-- /.l-menu-sp -->
   </div>
   <!-- /.superwrpper -->
-  <script src="scripts/vendor/pace.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="scripts/vendor/swiper.min.js"></script>
-  <script src="scripts/vendor/animsition.min.js"></script>
-  <script src="scripts/libs/hero-slider.js"></script>
-  <script src="scripts/vendor/simpleParallax.min.js"></script>
-  <script src="scripts/libs/scroll.js"></script>
-  <script src="scripts/libs/text-animation.js"></script>
-  <script src="/scripts/libs/page.js"></script>
-  <script src="scripts/libs/parallax.js"></script>
-  <script src="scripts/libs/scroll-btn.js"></script>
-  <script src="scripts/libs/mobile-menu.js"></script>
-  <script src="scripts/main.js"></script>
+  <?php get_footer(); ?>
 </body>
 
 </html>
