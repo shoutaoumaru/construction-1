@@ -6,31 +6,14 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>事業内容 | 建設テンプレート1</title>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/vendor/bootstrap-reboot.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/vendor/animsition.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/style.css" />
+  <?php get_header(); ?>
+
 </head>
 
 <body>
   <div class="first-wrapper animsition">
-    <header id="header" class="p-header">
-      <div class="logo clip-js3 top">
-        <a class="animsition-link" href="/">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
-        </a>
-      </div>
-      <!-- /.logo -->
-      <div class="l-menu-sp-button clip-js3 top"><i></i><i></i><i></i></div>
-      <!-- /.l-menu-sp-button -->
-      <?php get_template_part('includes/c-header'); ?>      
-      <!-- /.l-action-sp__buttons -->
-    </header>
-    <!-- /.p-header -->
+    <?php get_template_part('includes/c-header'); ?>      
     <div class="first-contents">
       <div id="c-topview" class="c-topview">
         <div class="c-topview__inner">
@@ -123,32 +106,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- /.fs-promise -->
-      <?php get_template_part('includes/c-footer'); ?>      
-    <!-- /.p-footer -->
-    <div class="l-menu-sp u-hidden-wide">
-      <div class="l-menu-sp__inner">
-        <nav class="l-menu-sp__nav">
-          <ul>
-            <li><a class="animsition-link" href=" <?php echo esc_url( home_url('/')); ?>">ホーム</a></li>
-            <li><a class="animsition-link" href=" <?php echo esc_url( home_url('/business')); ?>">事業内容</a></li>
-            <li><a class="animsition-link" href=" <?php echo esc_url( home_url('/company')); ?>">会社情報</a></li>
-            <li><a class="animsition-link" href=" <?php echo esc_url( home_url('/news')); ?>">ニュース</a></li>
-            <li><a class="animsition-link" href=" <?php echo esc_url( home_url('/recruit')); ?>">採用情報</a></li>
-          </ul>
-          <div class="reserve-btn-wrap">
-            <div class="reserve-btn-tel">
-              <h4>お電話はこちら</h4>
-              <div class="reserve-btn">
-                <a href="tel:092-686-7954"><span>092-686-7954</span></a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
     </div>
-    <!-- /.l-menu-sp -->
+    <?php get_footer(); ?>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/scripts/vendor/animsition.min.js"></script>
